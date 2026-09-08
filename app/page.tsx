@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { projects } from "../data/projects";
 
 const services = [
   ["01", "Websites & digital experiences", "Distinct, high-performing websites designed to express your brand clearly and turn attention into action.", "Web design", "Development", "E-commerce"],
@@ -18,20 +19,12 @@ const processSteps = [
   { number: "04", title: "Build, Launch & Grow", text: "We build, test and launch with care, then keep improving the experience as your audience and business evolve.", image: "/process/photos/build.jpg", imageAlt: "Development code running on a desktop monitor" },
 ];
 
+const featuredProjects = projects.slice(0, 4);
+
 const heroFeatures = [
   { title: "Strategy & direction", heading: "Clear foundations", text: "Positioning, content and a focused digital plan built around where your business wants to go.", image: "/projects/mockups.png" },
   { title: "Web design & development", heading: "Made to connect", text: "Beautiful, responsive websites that communicate clearly and make every interaction feel effortless.", image: "/projects/mockups.png" },
   { title: "Apps & digital products", heading: "Ready to grow", text: "Useful digital tools and experiences designed around your customers and built for what comes next.", image: "/projects/mockups.png" },
-];
-
-const stackedProjects = [
-  { name: "Eri Meeting Point", description: "A multilingual publishing platform with a focused editorial workspace and a clear experience for readers.", tags: ["Platform", "Editorial UX"], image: "/projects/mockups/eri-editor.jpeg" },
-  { name: "Akaltun Real Estate", description: "A refined property experience that makes discovering, comparing and exploring spaces feel effortless.", tags: ["Real estate", "Web design"], image: "/projects/mockups/akaltun-real-estate.png" },
-  { name: "Akaltun Furniture", description: "A visual digital showroom designed to let the collection, materials and craftsmanship lead the experience.", tags: ["E-commerce", "Creative direction"], image: "/projects/mockups/akaltun-furniture.png" },
-  { name: "L’Atelier Design", description: "An elegant portfolio and service website built around interiors, atmosphere and confident editorial typography.", tags: ["Portfolio", "Brand experience"], image: "/projects/mockups/latelier.png" },
-  { name: "Groupe Lachapelle", description: "A trustworthy, practical digital presence that turns specialist expertise into a clear customer journey.", tags: ["Construction", "Website"], image: "/projects/mockups/groupe-lachapelle.png" },
-  { name: "Lipman Wizzifi", description: "A bold music-led experience that gives the artist’s identity, releases and energy a distinctive digital stage.", tags: ["Music", "Digital experience"], image: "/projects/mockups/wizzifi.png" },
-  { name: "Beauty by Rhia", description: "A warm, polished booking experience created to showcase services and convert attention into appointments.", tags: ["Beauty", "Booking experience"], image: "/projects/mockups/beautybyrhia.png" },
 ];
 
 function VirtuWebzWordmark() {
@@ -185,14 +178,15 @@ export default function Home() {
 
     <section id="work" className="work section-pad light">
       <div className="section-head"><div className="section-label"><span>+</span> Selected work</div><h2>Recent<br/>projects<span>.</span></h2><p>Websites, applications and brand experiences created to solve real challenges and open new opportunities.</p></div>
-      <div className="stacked-work" aria-label="Selected VirtuWebz projects">{stackedProjects.map((project, index) => <article className="stacked-project-card" key={project.name} style={{zIndex:index + 1}}>
+      <div className="stacked-work" aria-label="Selected VirtuWebz projects">{featuredProjects.map((project, index) => <article className="stacked-project-card" key={project.name} style={{zIndex:index + 1}}>
         <div className="stacked-project-visual">
           <Image src={project.image} alt={`${project.name} project mockup`} fill sizes="(max-width: 900px) 94vw, 88vw" priority={index === 0}/>
           <div className="stacked-project-shade" aria-hidden="true"/>
-          <div className="stacked-project-index">{String(index + 1).padStart(2, "0")} / {String(stackedProjects.length).padStart(2, "0")}</div>
+          <div className="stacked-project-index">{String(index + 1).padStart(2, "0")} / {String(featuredProjects.length).padStart(2, "0")}</div>
           <div className="stacked-project-copy"><strong>{project.name}</strong><p>{project.description}</p><div>{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
         </div>
       </article>)}</div>
+      <a className="all-projects-link" href="/projects"><span>Explore all {projects.length} projects</span><i aria-hidden="true">↗</i></a>
     </section>
 
     <section id="services" className="services section-pad">
