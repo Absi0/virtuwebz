@@ -145,9 +145,7 @@ export default function Home() {
   return <main ref={root}>
     <nav className={`nav-wrap site-nav ${navHidden ? "nav-hidden" : ""}`}><a className="brand text-logo" href="#top" aria-label="VirtuWebz home"><VirtuWebzWordmark/></a><div className="nav-links"><a href="#about">Studio</a><a href="#services">Services</a><a href="#work">Projects</a></div><a href="#contact" className="nav-cta">Contact</a></nav>
     <section id="top" className="hero section-pad">
-      <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-        <source src="/vid/hero-background.mp4" type="video/mp4" />
-      </video>
+      <Image className="hero-photo" src="/images/hero-architecture.jpg" alt="Geometric blue architectural interior photographed by Jason Leung" fill priority loading="eager" sizes="100vw"/>
       <span className="hero-scrim" aria-hidden="true" />
       <div className="hero-kicker hero-meta"><span className="kicker-plus">+</span> VirtuWebz Digital Studio</div>
       <div className="hero-copy">
