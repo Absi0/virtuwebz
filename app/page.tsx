@@ -12,10 +12,10 @@ const services = [
 ];
 
 const processSteps = [
-  { number: "01", title: "Discover & Define", text: "We start with your business, audience and ambitions, then turn what we learn into a clear direction and focused plan.", image: "/projects/mockups.png" },
-  { number: "02", title: "Structure & Direction", text: "We shape the content, user journeys and creative foundations so every part of the experience has a purpose.", image: "/projects/mockups.png" },
-  { number: "03", title: "Design & Prototype", text: "We bring the direction to life through thoughtful visuals and interactive prototypes, refining the experience before launch.", image: "/projects/mockups.png" },
-  { number: "04", title: "Build, Launch & Grow", text: "We build, test and launch with care, then keep improving the experience as your audience and business evolve.", image: "/projects/mockups.png" },
+  { number: "01", title: "Discover & Define", text: "We start with your business, audience and ambitions, then turn what we learn into a clear direction and focused plan.", image: "/process/photos/discovery.jpg", imageAlt: "Team mapping a customer journey with research notes" },
+  { number: "02", title: "Structure & Direction", text: "We shape the content, user journeys and creative foundations so every part of the experience has a purpose.", image: "/process/photos/structure.jpg", imageAlt: "Hand-drawn website wireframes and information structure" },
+  { number: "03", title: "Design & Prototype", text: "We bring the direction to life through thoughtful visuals and interactive prototypes, refining the experience before launch.", image: "/process/photos/design.jpg", imageAlt: "Designer working with a graphics tablet and color system" },
+  { number: "04", title: "Build, Launch & Grow", text: "We build, test and launch with care, then keep improving the experience as your audience and business evolve.", image: "/process/photos/build.jpg", imageAlt: "Development code running on a desktop monitor" },
 ];
 
 const heroFeatures = [
@@ -200,7 +200,7 @@ export default function Home() {
       <div className="service-list">{services.map((s, i) => <article key={s[0]} className={`service ${open === i ? "active" : ""}`} onMouseEnter={() => setOpen(i)} onClick={() => setOpen(i)}><span className="num">({s[0]})</span><div><h3>{s[1]}</h3>{open === i && <div className="service-detail"><p>{s[2]}</p><div className="chips"><span>{s[3]}</span><span>{s[4]}</span><span>{s[5]}</span></div></div>}</div><button aria-label={`View ${s[1]}`}>{open === i ? "−" : "+"}</button></article>)}</div>
     </section>
 
-    <section className="process section-pad light"><div className="section-label"><span>+</span> How we work</div><h2 data-reveal>Thoughtful process.<br/><em>No guesswork.</em></h2><div className="process-accordion" data-reveal>{processSteps.map((step, i) => <button key={step.number} className={`process-panel ${activeProcess === i ? "active" : ""}`} onMouseEnter={() => setActiveProcess(i)} onFocus={() => setActiveProcess(i)} onClick={() => setActiveProcess(i)} aria-label={`View ${step.title} stage`}><Image src={step.image} alt={`${step.title} stage of the VirtuWebz creative process`} fill sizes="(max-width: 800px) 85vw, 65vw"/><span className="process-shade"/><span className="process-number">{step.number}</span><span className="process-title">{step.title}</span><span className="process-copy">{step.text}</span></button>)}</div></section>
+    <section className="process section-pad light"><div className="section-label"><span>+</span> How we work</div><h2 data-reveal>Thoughtful process.<br/><em>No guesswork.</em></h2><div className="process-accordion" data-reveal>{processSteps.map((step, i) => <button key={step.number} className={`process-panel ${activeProcess === i ? "active" : ""}`} onMouseEnter={() => setActiveProcess(i)} onFocus={() => setActiveProcess(i)} onClick={() => setActiveProcess(i)} aria-label={`View ${step.title} stage`}><Image src={step.image} alt={step.imageAlt} fill sizes="(max-width: 800px) 85vw, 65vw"/><span className="process-shade"/><span className="process-number">{step.number}</span><span className="process-title">{step.title}</span><span className="process-copy">{step.text}</span></button>)}</div></section>
 
     <footer id="contact" className="footer section-pad">
       <h2 data-reveal>Have an idea<br/><span>worth bringing to life?</span></h2>
