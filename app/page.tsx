@@ -19,12 +19,13 @@ const processSteps = [
   { number: "04", title: "Build, Launch & Grow", text: "We build, test and launch with care, then keep improving the experience as your audience and business evolve.", image: "/process/photos/build.jpg", imageAlt: "Development code running on a desktop monitor" },
 ];
 
-const featuredProjects = projects.slice(0, 4);
+const featuredProjectNames = ["Eri Meeting Point", "Egypt Visa Entry", "NH Fly", "Akaltun Real Estate"];
+const featuredProjects = projects.filter(project => featuredProjectNames.includes(project.name));
 
 const heroFeatures = [
-  { title: "Strategy & direction", heading: "Clear foundations", text: "Positioning, content and a focused digital plan built around where your business wants to go.", image: "/projects/mockups.png" },
-  { title: "Web design & development", heading: "Made to connect", text: "Beautiful, responsive websites that communicate clearly and make every interaction feel effortless.", image: "/projects/mockups.png" },
-  { title: "Apps & digital products", heading: "Ready to grow", text: "Useful digital tools and experiences designed around your customers and built for what comes next.", image: "/projects/mockups.png" },
+  { title: "Strategy", heading: "Start with a plan", text: "We work out what the site needs to say, who it is for and how it should work.", image: "/process/photos/discovery.jpg", imageAlt: "Strategy notes and customer journey planning" },
+  { title: "Design & development", heading: "Designed and built", text: "From the first layout to production code, we handle the whole website.", image: "/projects/mockups/latelier.png", imageAlt: "L’Atelier website displayed on a desktop screen" },
+  { title: "Apps & products", heading: "Built for real use", text: "Practical digital products shaped around the people who use them.", image: "/projects/mockups/eri-editor.jpeg", imageAlt: "Eri Meeting Point editorial application" },
 ];
 
 function VirtuWebzWordmark() {
@@ -42,7 +43,7 @@ export default function Home() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       setActiveHeroFeature(current => (current + 1) % heroFeatures.length);
-    }, 4800);
+    }, 3400);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -137,16 +138,18 @@ export default function Home() {
 
   return <main ref={root}>
     <nav className={`nav-wrap site-nav ${navHidden ? "nav-hidden" : ""}`}><a className="brand text-logo" href="#top" aria-label="VirtuWebz home"><VirtuWebzWordmark/></a><div className="nav-links"><a href="#about">Studio</a><a href="#services">Services</a><a href="#work">Projects</a></div><a href="#contact" className="nav-cta">Contact</a></nav>
-    <section id="top" className="hero section-pad">
+    <section id="top" className="hero video-hero">
       <Image className="hero-photo" src="/images/hero-architecture.jpg" alt="Geometric blue architectural interior photographed by Jason Leung" fill priority loading="eager" sizes="100vw"/>
+      <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/images/hero-architecture.jpg" aria-label="VirtuWebz showreel">
+        <source src="/vid/minipromo.mp4" type="video/mp4"/>
+      </video>
       <span className="hero-scrim" aria-hidden="true" />
       <div className="hero-kicker hero-meta"><span className="kicker-plus">+</span> VirtuWebz Digital Studio</div>
       <div className="hero-copy">
-        <h1><span className="line"><span className="hero-word">Websites, Apps</span></span><span className="line"><span className="hero-word">& Brands Built</span></span><span className="line"><span className="hero-word">to Move Forward.</span></span></h1>
+        <h1><span className="line"><span className="hero-word">We Design & Build</span></span><span className="line"><span className="hero-word">Websites, Apps</span></span><span className="line"><span className="hero-word">& Brands.</span></span></h1>
       </div>
       <aside className="hero-future hero-meta">
-        <div><strong>Made for what’s next</strong><p>Thoughtful design and flexible technology that can grow alongside your business.</p><a href="#contact">Let’s talk</a></div>
-        <figure><Image src="/projects/mockups.png" alt="" fill sizes="180px"/></figure>
+        <div><strong>Good design, solid code</strong><p>Clear, useful digital work built around your business.</p></div>
       </aside>
       <div className="hero-showcase hero-meta">
         <div className="hero-feature-slider">
@@ -159,12 +162,12 @@ export default function Home() {
           </div>
           <div className="feature-detail-card" key={heroFeatures[activeHeroFeature].title}>
             <div><strong>{heroFeatures[activeHeroFeature].heading}</strong><p>{heroFeatures[activeHeroFeature].text}</p><a href="#services">View services</a></div>
-            <figure><Image src={heroFeatures[activeHeroFeature].image} alt="" fill sizes="130px"/></figure>
+            <figure><Image src={heroFeatures[activeHeroFeature].image} alt={heroFeatures[activeHeroFeature].imageAlt} fill sizes="130px"/></figure>
             <button className="feature-next" onClick={() => setActiveHeroFeature(current => (current + 1) % heroFeatures.length)} aria-label="Next feature">↘</button>
           </div>
         </div>
         <div className="hero-lockup">
-          <strong>digital<br/>creative studio</strong>
+          <strong>Digital<br/>Creative Studio</strong>
           <a href="#contact">Start a project <span aria-hidden="true">↗</span></a>
         </div>
       </div>
@@ -172,8 +175,8 @@ export default function Home() {
 
     <section id="about" className="intro section-pad light">
       <div className="section-label"><span>+</span> The studio</div>
-      <div className="intro-copy" data-reveal>We combine <em>strategy, design</em> and technology to create websites, apps and brands that help businesses stand out and move forward.</div>
-      <div className="intro-foot" data-reveal><p>From the first idea to launch and beyond, we bring every discipline together so the work feels clear, cohesive and genuinely useful.</p><div className="stats"><div><b className="stat-number" data-count="6" data-suffix="+">0+</b><span>Years of experience</span></div><div><b className="stat-number" data-count="10" data-suffix="+">0+</b><span>Projects delivered</span></div><div><b className="stat-number" data-count="100" data-suffix="%">0%</b><span>Client satisfaction</span></div></div></div>
+      <div className="intro-copy" data-reveal>We create <em>brands, websites</em> and digital products built with purpose.</div>
+      <div className="intro-foot" data-reveal><p>Selected work across strategy, design and development, from first concept to final launch.</p><div className="stats"><div><b className="stat-number" data-count="6" data-suffix="+">0+</b><span>Years of experience</span></div><div><b className="stat-number" data-count="10" data-suffix="+">0+</b><span>Projects delivered</span></div><div><b className="stat-number" data-count="100" data-suffix="%">0%</b><span>Client satisfaction</span></div></div></div>
     </section>
 
     <section id="work" className="work section-pad light">
@@ -183,10 +186,18 @@ export default function Home() {
           <Image src={project.image} alt={`${project.name} project mockup`} fill sizes="(max-width: 900px) 94vw, 88vw" priority={index === 0}/>
           <div className="stacked-project-shade" aria-hidden="true"/>
           <div className="stacked-project-index">{String(index + 1).padStart(2, "0")} / {String(featuredProjects.length).padStart(2, "0")}</div>
-          <div className="stacked-project-copy"><strong>{project.name}</strong><p>{project.description}</p><div>{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>
+          <div className="stacked-project-copy"><strong>{project.name}</strong><p>{project.description}</p><div className="project-actions">{project.tags.map(tag => <span key={tag}>{tag}</span>)}{project.url && <a className="project-open-link" href={project.url} target="_blank" rel="noopener noreferrer">Open <b aria-hidden="true">↗</b></a>}</div></div>
         </div>
       </article>)}</div>
-      <a className="all-projects-link" href="/projects"><span>Explore all {projects.length} projects</span><i aria-hidden="true">↗</i></a>
+      <aside className="mapslio-ad" aria-label="Mapslio featured product">
+        <a href="https://mapslio.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Mapslio (opens in a new tab)">
+          <picture>
+            <source media="(max-width: 700px)" srcSet="/projects/mobile%20map2.png"/>
+            <Image src="/projects/map2.png" alt="Mapslio turns a Google Maps business listing into a website in minutes" width={1672} height={702} sizes="88vw"/>
+          </picture>
+        </a>
+      </aside>
+      <a className="all-projects-link" href="/projects"><span>Explore all projects</span><i aria-hidden="true">↗</i></a>
     </section>
 
     <section id="services" className="services section-pad">

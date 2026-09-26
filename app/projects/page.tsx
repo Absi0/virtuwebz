@@ -17,8 +17,8 @@ export default function ProjectsPage() {
       </nav>
 
       <header className="projects-hero">
-        <div className="projects-overline"><span>Selected archive</span><span>{String(projects.length).padStart(2, "0")} projects · 2025—2026</span></div>
-        <h1>Work built for<br/><em>what comes next.</em></h1>
+        <div className="projects-overline"><span>Selected archive</span></div>
+        <h1>Work built for what comes next.</h1>
         <div className="projects-hero-copy">
           <p>A closer look at the websites, platforms and brand experiences we have shaped across industries.</p>
           <a href="#project-grid">View the full collection <span aria-hidden="true">↓</span></a>
@@ -27,14 +27,15 @@ export default function ProjectsPage() {
 
       <section id="project-grid" className="project-archive" aria-label="All VirtuWebz projects">
         {projects.map((project, index) => (
-          <article className={`project-archive-card ${index === 0 || index === 3 || index === projects.length - 1 ? "project-archive-wide" : ""}`} key={project.name}>
+          <article className="project-archive-card" key={project.name}>
             <figure>
               <Image src={project.image} alt={`${project.name} digital project`} fill sizes="(max-width: 760px) 92vw, (max-width: 1200px) 46vw, 42vw" priority={index < 2}/>
               <span>{String(index + 1).padStart(2, "0")}</span>
             </figure>
             <div className="project-archive-info">
-              <div><h2>{project.name}</h2><span>{project.year}</span></div>
+              <div><h2>{project.url ? <a href={project.url} target="_blank" rel="noopener noreferrer">{project.name} <i aria-hidden="true">↗</i></a> : project.name}</h2><span>{project.year}</span></div>
               <p>{project.description}</p>
+              <p className="project-technology"><b>Built with</b> {project.technology.join(" · ")}</p>
               <footer><span>{project.sector}</span><div>{project.tags.map(tag => <small key={tag}>{tag}</small>)}</div></footer>
             </div>
           </article>
