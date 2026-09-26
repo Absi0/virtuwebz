@@ -190,7 +190,7 @@ export default function Home() {
         </div>
       </article>)}</div>
       <aside className="mapslio-ad" aria-label="Mapslio featured product">
-        <a href="https://mapslio.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Mapslio (opens in a new tab)">
+        <a href="mailto:support@mapslio.com" aria-label="Email Mapslio support">
           <picture>
             <source media="(max-width: 700px)" srcSet="/projects/mobile%20map2.png"/>
             <Image src="/projects/map2.png" alt="Mapslio turns a Google Maps business listing into a website in minutes" width={1672} height={702} sizes="88vw"/>

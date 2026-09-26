@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://virtuwebz.com"),
+  metadataBase: new URL("https://www.virtuwebz.com"),
   applicationName: "VirtuWebz",
   title: {
     default: "VirtuWebz — Websites, Apps & Digital Experiences",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description: "VirtuWebz is a digital studio creating distinctive websites, full-stack applications, brand identities and digital experiences for ambitious businesses.",
   keywords: ["website design", "web development", "full-stack development", "app design", "digital studio", "brand identity", "digital experiences"],
-  authors: [{ name: "VirtuWebz", url: "https://virtuwebz.com" }],
+  authors: [{ name: "VirtuWebz", url: "https://www.virtuwebz.com" }],
   creator: "VirtuWebz",
   publisher: "VirtuWebz",
   alternates: { canonical: "/" },
@@ -41,10 +41,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://virtuwebz.com/#organization",
+        "@id": "https://www.virtuwebz.com/#organization",
         name: "VirtuWebz",
-        url: "https://virtuwebz.com",
-        logo: "https://virtuwebz.com/icon.svg",
+        url: "https://www.virtuwebz.com",
+        logo: "https://www.virtuwebz.com/icon.svg",
         email: "hello@virtuwebz.com",
         description: "Digital studio specializing in websites, full-stack applications, brand identities and digital experiences.",
         areaServed: "Worldwide",
@@ -58,10 +58,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       },
       {
         "@type": "WebSite",
-        "@id": "https://virtuwebz.com/#website",
-        url: "https://virtuwebz.com",
+        "@id": "https://www.virtuwebz.com/#website",
+        url: "https://www.virtuwebz.com",
         name: "VirtuWebz",
-        publisher: { "@id": "https://virtuwebz.com/#organization" },
+        publisher: { "@id": "https://www.virtuwebz.com/#organization" },
         inLanguage: "en",
       },
     ],

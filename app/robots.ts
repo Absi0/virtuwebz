@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://virtuwebz.com/sitemap.xml",
-    host: "https://virtuwebz.com",
+    sitemap: "https://www.virtuwebz.com/sitemap.xml",
+    host: "https://www.virtuwebz.com",
   };
 }
