@@ -190,7 +190,7 @@ export default function Home() {
         </div>
       </article>)}</div>
       <aside className="mapslio-ad" aria-label="Mapslio featured product">
-        <a href="mailto:support@mapslio.com" aria-label="Email Mapslio support">
+        <a href="https://mapslio.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Mapslio (opens in a new tab)">
           <picture>
             <source media="(max-width: 700px)" srcSet="/projects/mobile%20map2.png"/>
             <Image src="/projects/map2.png" alt="Mapslio turns a Google Maps business listing into a website in minutes" width={1672} height={702} sizes="88vw"/>
@@ -211,7 +211,7 @@ export default function Home() {
       <h2 data-reveal>Have an idea<br/><span>worth bringing to life?</span></h2>
 
       <div className="footer-cards">
-        <a className="footer-card" href="mailto:hello@virtuwebz.com">
+        <a className="footer-card" href="mailto:support@mapslio.com">
           <span><strong>Contact us</strong><small>hello@virtuwebz.com</small></span>
           <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 52 52 12M20 12h32v32"/></svg>
         </a>

@@ -36,10 +36,11 @@ export default function ProjectsPage() {
           <article className="project-archive-card" key={project.name}>
             <figure>
               <Image src={project.image} alt={`${project.name} digital project`} fill sizes="(max-width: 760px) 92vw, (max-width: 1200px) 46vw, 42vw" priority={index < 2}/>
+              {project.url && <a className="project-archive-cover-link" href={project.url} target={project.url.startsWith("http") ? "_blank" : undefined} rel={project.url.startsWith("http") ? "noopener noreferrer" : undefined} aria-label={`${project.url.startsWith("mailto:") ? "Email" : "Visit"} ${project.name}`}/>} 
               <span>{String(index + 1).padStart(2, "0")}</span>
             </figure>
             <div className="project-archive-info">
-              <div><h2>{project.url ? <a href={project.url} target="_blank" rel="noopener noreferrer">{project.name} <i aria-hidden="true">↗</i></a> : project.name}</h2><span>{project.year}</span></div>
+              <div><h2>{project.url ? <a href={project.url} target={project.url.startsWith("http") ? "_blank" : undefined} rel={project.url.startsWith("http") ? "noopener noreferrer" : undefined}>{project.name} <i aria-hidden="true">↗</i></a> : project.name}</h2><span>{project.year}</span></div>
               <p>{project.description}</p>
               <p className="project-technology"><b>Built with</b> {project.technology.join(" · ")}</p>
               <footer><span>{project.sector}</span><div>{project.tags.map(tag => <small key={tag}>{tag}</small>)}</div></footer>
@@ -51,7 +52,7 @@ export default function ProjectsPage() {
       <footer className="projects-footer">
         <span>Have a project in mind?</span>
         <h2>Let’s make something<br/>worth remembering.</h2>
-        <a href="mailto:hello@virtuwebz.com">hello@virtuwebz.com <span aria-hidden="true">↗</span></a>
+        <a href="mailto:support@mapslio.com">hello@virtuwebz.com <span aria-hidden="true">↗</span></a>
         <div><span>VirtuWebz © {new Date().getFullYear()}</span><a href="/">Return home</a></div>
       </footer>
     </main>

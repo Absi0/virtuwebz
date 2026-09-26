@@ -46,7 +46,7 @@ export const projects: Project[] = [
     tags: ["SaaS platform", "AI product", "Web development"],
     technology: ["Next.js", "TypeScript", "Google Maps API"],
     image: "/projects/Screenshot map.png",
-    url: "mailto:support@mapslio.com",
+    url: "https://mapslio.com",
     year: "2025",
     sector: "SaaS & local business",
   },
