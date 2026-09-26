@@ -37,7 +37,7 @@ export const projects: Project[] = [
     technology: ["Next.js", "TypeScript", "Booking API"],
     image: "/projects/NHfly.png",
     url: "https://fly.newhorizonsgulf.com",
-    year: "2026",
+    year: "2025",
     sector: "Travel technology",
   },
   {
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     technology: ["Next.js", "TypeScript", "Google Maps API"],
     image: "/projects/Screenshot map.png",
     url: "mailto:support@mapslio.com",
-    year: "2026",
+    year: "2025",
     sector: "SaaS & local business",
   },
   {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     technology: ["Next.js", "TypeScript", "Headless CMS"],
     image: "/projects/mockups/akaltun-real-estate.png",
     url: "https://akaltun.com",
-    year: "2026",
+    year: "2025",
     sector: "Property",
   },
   {
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     tags: ["Showcase website", "Brand experience", "Web design"],
     technology: ["Next.js", "TypeScript", "CMS"],
     image: "/projects/mockups/latelier.png",
-    year: "2025",
+    year: "2022",
     sector: "Interior design",
   },
   {
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     tags: ["Construction", "Website", "Content structure"],
     technology: ["Next.js", "TypeScript", "CMS"],
     image: "/projects/mockups/groupe-lachapelle.png",
-    year: "2025",
+    year: "2022",
     sector: "Construction",
   },
   {
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     tags: ["Music", "Digital experience", "Creative direction"],
     technology: ["Next.js", "TypeScript", "Motion"],
     image: "/projects/mockups/wizzifi.png",
-    year: "2025",
+    year: "2022",
     sector: "Music & culture",
   },
   {
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     tags: ["Beauty", "Booking experience", "Web design"],
     technology: ["Next.js", "TypeScript", "Booking API"],
     image: "/projects/mockups/beautybyrhia.png",
-    year: "2025",
+    year: "2022",
     sector: "Beauty & wellness",
   },
 ];

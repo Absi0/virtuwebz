@@ -212,7 +212,7 @@ export default function Home() {
 
       <div className="footer-cards">
         <a className="footer-card" href="mailto:hello@virtuwebz.com">
-          <span><strong>Start a project</strong><small>hello@virtuwebz.com</small></span>
+          <span><strong>Contact us</strong><small>hello@virtuwebz.com</small></span>
           <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 52 52 12M20 12h32v32"/></svg>
         </a>
         <div className="footer-card">
