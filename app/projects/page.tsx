@@ -3,8 +3,14 @@ import Image from "next/image";
 import { projects } from "../../data/projects";
 
 export const metadata: Metadata = {
-  title: "Projects — VirtuWebz Digital Studio",
+  title: "Projects",
   description: "Explore websites, applications and brand experiences designed and developed by VirtuWebz.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Selected Projects — VirtuWebz",
+    description: "Explore websites, full-stack platforms and brand experiences designed and developed by VirtuWebz.",
+    url: "/projects",
+  },
 };
 
 export default function ProjectsPage() {
